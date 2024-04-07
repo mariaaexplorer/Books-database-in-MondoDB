@@ -1,0 +1,674 @@
+//carte
+db.createCollection('carte')
+db.carte.insertOne({
+    id_carte: 1,
+    titlu: 'Străinul',
+    an_aparitie: 1942,
+    genul: 'Ficțiune',
+    editura: [{
+        id_editura: 1,
+        nume_editura: 'Editura Alpha'}],
+    limbi: [{
+        id_limba: 1,
+        limba: 'Română'}],
+    autor: [{
+        id_autor: 1,
+        nume: 'Albert Camus',
+        tara: 'Franța'}]
+    })
+db.carte.insertOne({
+    id_carte: 4,
+    titlu: 'Micul Prinț',
+    an_aparitie: 1943,
+    genul: 'Poveste',
+    editura: [{
+        id_editura: 4,
+        nume_editura: 'Editura Delta'}],
+    limbi: [{
+        id_limba: 4,
+        limba: 'Germană'}],
+    autor: [{
+        id_autor: 4,
+        nume: 'Antoine de Saint-Exupéry',
+        tara: 'Franța'}]
+    })   
+db.carte.insertOne({
+    id_carte: 2,
+    titlu: 'În căutarea timpului pierdut',
+    an_aparitie: 1913,
+    genul: 'Roman',
+    editura: [{
+        id_editura: 2,
+        nume_editura: 'Editura Beta'}],
+    limbi: [{
+        id_limba: 2,
+        limba: 'Engleză'}],
+    autor: [{
+        id_autor: 2,
+        nume: 'Marcel Proust',
+        tara: 'Franța'}]
+    })
+//edituri
+db.createCollection('editura')
+db.editura.insertOne({
+    id_editura: 1,
+    nume_editura: 'Editura Alpha',
+    carte:[{
+        id_carte: 1,
+        titlu: 'Străinul',
+        an_aparitie: 1942,
+        genul: 'Ficțiune'}]
+    })
+db.editura.insertOne({
+    id_editura: 4,
+    nume_editura: 'Editura Delta',
+    carte:[{
+        id_carte: 4,
+        titlu: 'Micul Prinț',
+        an_aparitie: 1943,
+        genul: 'Poveste'}]
+    })
+db.editura.insertOne({
+    id_editura: 2,
+    nume_editura: 'Editura Beta',
+    carte:[{
+        id_carte: 2,
+        titlu: 'În căutarea timpului pierdut',
+        an_aparitie: 1913,
+        genul: 'Roman'}]
+    })
+//limbi
+db.createCollection('limbi')
+db.limbi.insertOne({
+    id_limba: 2,
+    limba: 'Engleză',
+    carte:[{
+        id_carte: 2,
+        titlu: 'În căutarea timpului pierdut',
+        an_aparitie: 1913,
+        genul: 'Roman'}]
+    })
+db.limbi.insertOne({
+    id_limba: 4,
+    limba: 'Germană',
+    carte:[{
+        id_carte: 4,
+        titlu: 'Micul Prinț',
+        an_aparitie: 1943,
+        genul: 'Poveste'}]
+    })
+db.limbi.insertOne({
+    id_limba: 1,
+    limba: 'Română',
+    carte:[{
+        id_carte: 1,
+        titlu: 'Străinul',
+        an_aparitie: 1942,
+        genul: 'Ficțiune'}]
+    })
+//autor
+db.createCollection('autor')
+db.autor.insertOne({
+    id_autor: 2,
+    nume: 'Marcel Proust',
+    tara: 'Franța',
+    carte:[{
+        id_carte: 2,
+        titlu: 'În căutarea timpului pierdut',
+        an_aparitie: 1913,
+        genul: 'Roman'}]
+    })
+db.autor.insertOne({
+    id_autor: 4,
+    nume: 'Antoine de Saint-Exupéry',
+    tara: 'Franța',
+    carte:[{
+        id_carte: 4,
+        titlu: 'Micul Prinț',
+        an_aparitie: 1943,
+        genul: 'Poveste'}]
+    })
+db.autor.insertOne({
+    id_autor: 1,
+    nume: 'Albert Camus',
+    tara: 'Franța',
+    carte:[{
+        id_autor: 1,
+        titlu: 'Străinul',
+        an_aparitie: 1942,
+        genul: 'Ficțiune'}]
+    })
+//clienti
+db.createCollection('clienti')
+db.clienti.insertOne({
+    id_client: 1,
+    nume: 'Mildred',
+    prenume: 'OLunney',
+    nr_telefon: 6366778343,
+    email: 'molunney0@merriam-webster.com',
+    gen: 'Female',
+    total_carti_imprumutate: 12,
+    adresa:[{
+        id_adresa: 11,
+        strada: 'American',
+        numar: 17,
+        oras: 'Turenki',
+        cod_postal: 875734},
+        {
+        id_adresa: 4,
+        strada: 'Golf',
+        numar: 4,
+        oras: 'Kolpashevo',
+        cod_postal: 455215}]
+    })
+db.clienti.insertOne({
+    id_client: 2,
+    nume: 'Jamaal',
+    prenume: 'Amber',
+    nr_telefon: 3237201911,
+    email: 'jamber1@squarespace.com',
+    gen: 'Male',
+    total_carti_imprumutate: 19,
+    adresa: [{
+        id_adresa: 1,
+        strada: 'Badeau',
+        numar: 19,
+        oras: 'Huanggang',
+        cod_postal: 229416}]
+    })
+db.clienti.insertOne({
+    id_client: 3,
+    nume: 'Cob',
+    prenume: 'MacKellar',
+    nr_telefon: 5811940289,
+    email: 'jcmackellar2@princeton.edu',
+    gen: 'Male',
+    total_carti_imprumutate: 22,
+    adresa: [{
+        id_adresa: 2,
+        strada: 'Cody',
+        numar: 1,
+        oras: 'Nesterovskaya',
+        cod_postal: 506796},
+        {
+        id_adresa: 12,
+        strada: 'Old Gate',
+        numar: 14,
+        oras: 'Mashan',
+        cod_postal: 825980}]
+    })
+//adresa
+db.createCollection('adresa')
+db.adresa.insertOne({
+    id_adresa: 2,
+    strada: 'Cody',
+    numar: 1,
+    oras: 'Nesterovskaya',
+    cod_postal: 506796,
+    clienti: [{
+        id_client: 3,
+        nume: 'Cob',
+        prenume: 'MacKellar',
+        nr_telefon: 5811940289,
+        email: 'jcmackellar2@princeton.edu',
+        gen: 'Male',
+        total_carti_imprumutate: 22}] 
+    })
+db.adresa.insertOne({
+    id_adresa: 12,
+    strada: 'Old Gate',
+    numar: 14,
+    oras: 'Mashan',
+    cod_postal: 825980,
+    clienti: [{
+        id_client: 3,
+        nume: 'Cob',
+        prenume: 'MacKellar',
+        nr_telefon: 5811940289,
+        email: 'jcmackellar2@princeton.edu',
+        gen: 'Male',
+        total_carti_imprumutate: 22}] 
+        })
+db.adresa.insertOne({
+    id_adresa: 1,
+    strada: 'Badeau',
+    numar: 19,
+    oras: 'Huanggang',
+    cod_postal: 229416,
+    clienti: [{
+        id_client: 2,
+        nume: 'Jamaal',
+        prenume: 'Amber',
+        nr_telefon: 3237201911,
+        email: 'jamber1@squarespace.com',
+        gen: 'Male',
+        total_carti_imprumutate: 19}] 
+    })
+db.adresa.insertOne({
+    id_adresa: 11,
+    strada: 'American',
+    numar: 17,
+    oras: 'Turenki',
+    cod_postal: 875734,
+    clienti: [{
+        id_client: 1,
+        nume: 'Mildred',
+        prenume: 'OLunney',
+        nr_telefon: 6366778343,
+        email: 'molunney0@merriam-webster.com',
+        gen: 'Female',
+        total_carti_imprumutate: 12}] 
+    })
+db.adresa.insertOne({
+    id_adresa: 4,
+    strada: 'Golf',
+    numar: 4,
+    oras: 'Kolpashevo',
+    cod_postal: 455215,
+    clienti: [{
+        id_client: 1,
+        nume: 'Mildred',
+        prenume: 'OLunney',
+        nr_telefon: 6366778343,
+        email: 'molunney0@merriam-webster.com',
+        gen: 'Female',
+        total_carti_imprumutate: 12}] 
+    })
+
+
+
+//carte
+db.createCollection('carte')
+db.carte.insertOne({
+    id_carte: 1,
+    titlu: 'Străinul',
+    an_aparitie: 1942,
+    genul: 'Ficțiune',
+    editura: [{
+        id_editura: 1,
+        nume_editura: 'Editura Alpha'}],
+    limbi: [{
+        id_limba: 1,
+        limba: 'Română'}],
+    autor: [{
+        id_autor: 1,
+        nume: 'Albert Camus',
+        tara: 'Franța'}]
+    })
+db.carte.insertOne({
+    id_carte: 4,
+    titlu: 'Micul Prinț',
+    an_aparitie: 1943,
+    genul: 'Poveste',
+    editura: [{
+        id_editura: 4,
+        nume_editura: 'Editura Delta'}],
+    limbi: [{
+        id_limba: 4,
+        limba: 'Germană'}],
+    autor: [{
+        id_autor: 4,
+        nume: 'Antoine de Saint-Exupéry',
+        tara: 'Franța'}]
+    })   
+db.carte.insertOne({
+    id_carte: 2,
+    titlu: 'În căutarea timpului pierdut',
+    an_aparitie: 1913,
+    genul: 'Roman',
+    editura: [{
+        id_editura: 2,
+        nume_editura: 'Editura Beta'}],
+    limbi: [{
+        id_limba: 2,
+        limba: 'Engleză'}],
+    autor: [{
+        id_autor: 2,
+        nume: 'Marcel Proust',
+        tara: 'Franța'}]
+    })
+//edituri
+db.createCollection('editura')
+db.editura.insertOne({
+    id_editura: 1,
+    nume_editura: 'Editura Alpha',
+    carte:[{
+        id_carte: 1,
+        titlu: 'Străinul',
+        an_aparitie: 1942,
+        genul: 'Ficțiune'}]
+    })
+db.editura.insertOne({
+    id_editura: 4,
+    nume_editura: 'Editura Delta',
+    carte:[{
+        id_carte: 4,
+        titlu: 'Micul Prinț',
+        an_aparitie: 1943,
+        genul: 'Poveste'}]
+    })
+db.editura.insertOne({
+    id_editura: 2,
+    nume_editura: 'Editura Beta',
+    carte:[{
+        id_carte: 2,
+        titlu: 'În căutarea timpului pierdut',
+        an_aparitie: 1913,
+        genul: 'Roman'}]
+    })
+//limbi
+db.createCollection('limbi')
+db.limbi.insertOne({
+    id_limba: 2,
+    limba: 'Engleză',
+    carte:[{
+        id_carte: 2,
+        titlu: 'În căutarea timpului pierdut',
+        an_aparitie: 1913,
+        genul: 'Roman'}]
+    })
+db.limbi.insertOne({
+    id_limba: 4,
+    limba: 'Germană',
+    carte:[{
+        id_carte: 4,
+        titlu: 'Micul Prinț',
+        an_aparitie: 1943,
+        genul: 'Poveste'}]
+    })
+db.limbi.insertOne({
+    id_limba: 1,
+    limba: 'Română',
+    carte:[{
+        id_carte: 1,
+        titlu: 'Străinul',
+        an_aparitie: 1942,
+        genul: 'Ficțiune'}]
+    })
+//autor
+db.createCollection('autor')
+db.autor.insertOne({
+    id_autor: 2,
+    nume: 'Marcel Proust',
+    tara: 'Franța',
+    carte:[{
+        id_carte: 2,
+        titlu: 'În căutarea timpului pierdut',
+        an_aparitie: 1913,
+        genul: 'Roman'}]
+    })
+db.autor.insertOne({
+    id_autor: 4,
+    nume: 'Antoine de Saint-Exupéry',
+    tara: 'Franța',
+    carte:[{
+        id_carte: 4,
+        titlu: 'Micul Prinț',
+        an_aparitie: 1943,
+        genul: 'Poveste'}]
+    })
+db.autor.insertOne({
+    id_autor: 1,
+    nume: 'Albert Camus',
+    tara: 'Franța',
+    carte:[{
+        id_autor: 1,
+        titlu: 'Străinul',
+        an_aparitie: 1942,
+        genul: 'Ficțiune'}]
+    })
+//clienti
+db.createCollection('clienti')
+db.clienti.insertOne({
+    id_client: 1,
+    nume: 'Mildred',
+    prenume: 'OLunney',
+    nr_telefon: 6366778343,
+    email: 'molunney0@merriam-webster.com',
+    gen: 'Female',
+    total_carti_imprumutate: 12,
+    adresa:[{
+        id_adresa: 11,
+        strada: 'American',
+        numar: 17,
+        oras: 'Turenki',
+        cod_postal: 875734},
+        {
+        id_adresa: 4,
+        strada: 'Golf',
+        numar: 4,
+        oras: 'Kolpashevo',
+        cod_postal: 455215}]
+    })
+db.clienti.insertOne({
+    id_client: 2,
+    nume: 'Jamaal',
+    prenume: 'Amber',
+    nr_telefon: 3237201911,
+    email: 'jamber1@squarespace.com',
+    gen: 'Male',
+    total_carti_imprumutate: 19,
+    adresa: [{
+        id_adresa: 1,
+        strada: 'Badeau',
+        numar: 19,
+        oras: 'Huanggang',
+        cod_postal: 229416}]
+    })
+db.clienti.insertOne({
+    id_client: 3,
+    nume: 'Cob',
+    prenume: 'MacKellar',
+    nr_telefon: 5811940289,
+    email: 'jcmackellar2@princeton.edu',
+    gen: 'Male',
+    total_carti_imprumutate: 22,
+    adresa: [{
+        id_adresa: 2,
+        strada: 'Cody',
+        numar: 1,
+        oras: 'Nesterovskaya',
+        cod_postal: 506796},
+        {
+        id_adresa: 12,
+        strada: 'Old Gate',
+        numar: 14,
+        oras: 'Mashan',
+        cod_postal: 825980}]
+    })
+//adresa
+db.createCollection('adresa')
+db.adresa.insertOne({
+    id_adresa: 2,
+    strada: 'Cody',
+    numar: 1,
+    oras: 'Nesterovskaya',
+    cod_postal: 506796,
+    clienti: [{
+        id_client: 3,
+        nume: 'Cob',
+        prenume: 'MacKellar',
+        nr_telefon: 5811940289,
+        email: 'jcmackellar2@princeton.edu',
+        gen: 'Male',
+        total_carti_imprumutate: 22}] 
+    })
+db.adresa.insertOne({
+    id_adresa: 12,
+    strada: 'Old Gate',
+    numar: 14,
+    oras: 'Mashan',
+    cod_postal: 825980,
+    clienti: [{
+        id_client: 3,
+        nume: 'Cob',
+        prenume: 'MacKellar',
+        nr_telefon: 5811940289,
+        email: 'jcmackellar2@princeton.edu',
+        gen: 'Male',
+        total_carti_imprumutate: 22}] 
+        })
+db.adresa.insertOne({
+    id_adresa: 1,
+    strada: 'Badeau',
+    numar: 19,
+    oras: 'Huanggang',
+    cod_postal: 229416,
+    clienti: [{
+        id_client: 2,
+        nume: 'Jamaal',
+        prenume: 'Amber',
+        nr_telefon: 3237201911,
+        email: 'jamber1@squarespace.com',
+        gen: 'Male',
+        total_carti_imprumutate: 19}] 
+    })
+db.adresa.insertOne({
+    id_adresa: 11,
+    strada: 'American',
+    numar: 17,
+    oras: 'Turenki',
+    cod_postal: 875734,
+    clienti: [{
+        id_client: 1,
+        nume: 'Mildred',
+        prenume: 'OLunney',
+        nr_telefon: 6366778343,
+        email: 'molunney0@merriam-webster.com',
+        gen: 'Female',
+        total_carti_imprumutate: 12}] 
+    })
+db.adresa.insertOne({
+    id_adresa: 4,
+    strada: 'Golf',
+    numar: 4,
+    oras: 'Kolpashevo',
+    cod_postal: 455215,
+    clienti: [{
+        id_client: 1,
+        nume: 'Mildred',
+        prenume: 'OLunney',
+        nr_telefon: 6366778343,
+        email: 'molunney0@merriam-webster.com',
+        gen: 'Female',
+        total_carti_imprumutate: 12}] 
+    })
+//imprumuturi (colectie cu fielduri simple)
+db.createCollection('imprumuturi')
+db.imrpumuturi.insertOne({
+  _id: 1,
+  id_client: 1,
+  id_carte: 1,
+  data_imprumut: ISODate("2024-01-20T12:00:00Z"),
+  data_returnare: ISODate("2024-02-20T12:00:00Z"),
+  data_efectiva:ISODate("2024-02-20T12:00:00Z"),
+  statut: "În curs de desfășurare",
+})
+db.imrpumuturi.insertOne({
+  _id: 2,
+  id_client: 2,
+  id_carte: 3,
+  data_imprumut: ISODate("2023-12-20T12:00:00Z"),
+  data_returnare: ISODate("2024-01-20T12:00:00Z"),
+  data_efectiva:null,
+  statut: "Depasit",
+})
+db.imrpumuturi.insertOne({
+  _id: 3,
+  id_client: 3,
+  id_carte: 2,
+  data_imprumut: ISODate("2024-01-01T12:00:00Z"),
+  data_returnare: ISODate("2024-02-01T12:00:00Z"),
+  data_efectiva:ISODate("2024-01-20T12:00:00Z"),
+  statut: "Terminat",
+})
+
+
+//interogare fara nici un filtru
+db.carte.find();
+
+//interogare cu filtru pe un field simplu
+db.carte.find({
+  "genul":"Poveste"
+});
+
+//interogare cu filtru pe obiect
+db.carte.find({
+  "autor.nume": "Marcel Proust"
+});
+
+//interogare cu mai multe filtre
+db.carte.find({
+  "an_aparitie":1913,
+  "limbi.limba":"Engleză"
+});
+
+
+
+
+//stoc_carti colectie cu vectori si mai multe documente
+db.createCollection('stoc_carti')
+db.stoc_carti.insertMany([
+  {
+    "id_Carte": 1,
+    "stoc_disponibil": 20,
+    "stoc_total": 30
+  },
+  {
+    "id_Carte": 2,
+    "stoc_disponibil": 15,
+    "stoc_total": 25
+  },
+  {
+    "id_Carte": 3,
+    "stoc_disponibil": 10,
+    "stoc_total": 20
+  }
+])
+
+db.stoc_carti.insertMany([
+  {
+    "id_Carte": 4,
+    "stoc_disponibil": 25,
+    "stoc_total": 40
+  },
+  {
+    "id_Carte": 5,
+    "stoc_disponibil": 18,
+    "stoc_total": 30
+  },
+  {
+    "id_Carte": 6,
+    "stoc_disponibil": 22,
+    "stoc_total": 35
+  }
+])
+
+
+// colecția "carti_categorii"
+db.createCollection('carti_categorii')
+
+// două documente, fiecare cu minim două vectori: categorii
+
+db.carti_categorii.insertMany([
+  {
+    "id_carte": 1,
+    "titlu": "Străinul",
+    "categorii": ["Ficțiune", "Roman"],
+    "detalii": {
+      "editura": "Editura Alpha",
+      "limba": "Română",
+      "autor": "Albert Camus"
+    }
+  },
+  {
+    "id_carte": 4,
+    "titlu": "Micul Prinț",
+    "categorii": ["Poveste", "Ficțiune"],
+    "detalii": {
+      "editura": "Editura Delta",
+      "limba": "Germană",
+      "autor": "Antoine de Saint-Exupéry"
+    }
+  }
+])
